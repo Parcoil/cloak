@@ -1,0 +1,28 @@
+{
+  "name": "@parcoil/cloak",
+  "version": "1.0.0",
+  "description": "Tab Cloaking lib",
+  "main": "index.js",
+  "scripts": {
+    "build": "minify index.js > cloak.js",
+    "publish": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parcoil/cloak.git"
+  },
+  "keywords": [
+    "cloak",
+    "tabcloak",
+    "proxy"
+  ],
+  "author": "Parcoil Network",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Parcoil/cloak/issues"
+  },
+  "homepage": "https://github.com/Parcoil/cloak#readme",
+  "dependencies": {
+    "minify": "^11.4.0"
+  }
+}

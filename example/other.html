@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="../index.js"></script>
+  </head>
+  <body>
+    <h1>this is to test cloak for multipages</h1>
+    <a href="index.html">Go home</a>
+    <div>
+      <label for="cloak">Select a Cloak:</label>
+      <select name="cloak" id="cloakSelect">
+        <option value="default">Default Cloak</option>
+        <option value="poop">Poop Cloak</option>
+        <option value="purple">Purple Cloak</option>
+        <option value="sparkles">Sparkle Cloak</option>
+      </select>
+    </div>
+  </body>
+  <script>
+    const cloaks = [
+      { name: "default", icon: "./cloaks/default.ico", title: "Default Cloak" },
+      { name: "poop", icon: "./cloaks/poop.ico", title: "Poop Cloak" },
+      { name: "purple", icon: "./cloaks/purple.ico", title: "Purple Cloak" },
+      {
+        name: "sparkles",
+        icon: "./cloaks/sparkles.ico",
+        title: "Sparkle Cloak",
+      },
+    ];
+  </script>
+</html>
