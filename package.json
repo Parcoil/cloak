@@ -4,7 +4,7 @@
   "description": "Tab Cloaking lib",
   "main": "index.js",
   "scripts": {
-    "build": "minify index.js > cloak.js && npm publish",
+    "build": "minify index.js > cloak.js && npm publish --access public",
     "min": "minify index.js > cloak.js"
   },
   "repository": {

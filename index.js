@@ -74,3 +74,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // this initialize cloak settings
 cloak.init();
+
+export default "cloak";
