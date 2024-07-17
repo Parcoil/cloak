@@ -14,6 +14,12 @@ To start using CloakJS quickly, install it via npm:
 npm install @parcoil/cloak
 ```
 
+or
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@parcoil/cloak/cloak.js"></script>
+```
+
 ### Preparing Your Webpage
 
 Before using CloakJS, ensure your webpage is properly configured:

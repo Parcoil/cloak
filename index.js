@@ -45,8 +45,9 @@ const cloak = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  savedTitle = localStorage.getItem("cloakTitle");
-  savedFavicon = localStorage.getItem("cloakFavicon");
+  let savedTitle = localStorage.getItem("cloakTitle");
+  let savedFavicon = localStorage.getItem("cloakFavicon");
+
   cloak.setFavicon(savedFavicon);
   cloak.setTitle(savedTitle);
 
@@ -68,20 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
     });
-  } else {
   }
 });
 
-// Example usage:
+// this initialize cloak settings
 cloak.init();
-// cloak.setFavicon("new-favicon-url.ico");
-// cloak.setTitle("New Page Title");
-
-// Testing:
-// const favicon = cloak.getFavicon();
-// const title = cloak.getTitle();
-// console.log(favicon);
-// console.log(title);
-
-// Export if used in a module:
-// module.exports = cloak;
