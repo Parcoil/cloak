@@ -40,7 +40,7 @@ const cloak = {
       cloakFavicon = localStorage.getItem("cloakFavicon");
     }
 
-    console.log(logo, `Title: ${cloakTitle} Favicon URL: ${cloakFavicon}`);
+    // console.log(logo, `Title: ${cloakTitle} Favicon URL: ${cloakFavicon}`);
   },
 };
 
