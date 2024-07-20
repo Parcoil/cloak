@@ -1,7 +1,3 @@
-> [!IMPORTANT]
-> npm is not working at the moment
->
-> >
 
 # CloakJS: Simplifying Tab Cloaking with JavaScript
 
@@ -13,16 +9,10 @@ CloakJS is a lightweight JavaScript library designed for easy tab cloaking.
 
 ## Get Started
 
-To start using CloakJS quickly, install it via npm:
-
-```bash
-npm install @parcoil/cloak
-```
-
-or
+To start using CloakJS quickly use Jsdelivr:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@parcoil/cloak/cloak.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Parcoil/cloak@main/index.min.js"></script>
 ```
 
 ### Preparing Your Webpage
