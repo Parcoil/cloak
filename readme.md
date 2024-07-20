@@ -1,4 +1,3 @@
-
 # CloakJS: Simplifying Tab Cloaking with JavaScript
 
 CloakJS is a lightweight JavaScript library designed for easy tab cloaking.
@@ -58,5 +57,46 @@ To configure cloaks on your page:
   ];
 </script>
 ```
+
+### Using CloakJS APIs
+
+You can use the following APIs with CloakJS:
+
+- **getTitle()**: Get the current document title.
+  
+  Example:
+  ```javascript
+  const title = cloak.getTitle();
+  console.log(title); // Outputs the current title of the document
+  ```
+
+- **setTitle(newTitle)**: Set a new document title.
+
+  Example:
+  ```javascript
+  cloak.setTitle("New Title");
+  ```
+
+- **getFavicon()**: Get the current favicon URL.
+
+  Example:
+  ```javascript
+  const favicon = cloak.getFavicon();
+  console.log(favicon); // Outputs the current favicon URL
+  ```
+
+- **setFavicon(url)**: Set a new favicon URL.
+
+  Example:
+  ```javascript
+  cloak.setFavicon("new-icon-url.ico");
+  ```
+
+- **setCloak(newTitle, url)**: Set both the document title and favicon, and store them in localStorage.
+
+  Example:
+  ```javascript
+  cloak.setCloak("New Cloak Title", "new-cloak-icon-url.ico");
+  ```
 
 If you encounter any issues, feel free to create an issue on GitHub.
