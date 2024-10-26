@@ -6,6 +6,8 @@ CloakJS is a lightweight JavaScript library designed for easy tab cloaking.
 
 ![Demo](https://github.com/Parcoil/cloak/blob/main/assets/demo.gif)
 
+View a live demo at [](DEMO)
+
 ## Get Started
 
 To start using CloakJS quickly use Jsdelivr:
@@ -34,10 +36,10 @@ Make sure your webpage has a title:
 
 To configure cloaks on your page:
 
-1. Create a `<select>` element with the id `cloakSelect`:
+1. Create a `<select>` element with the data tag `data-cloak-select`:
 
 ```html
-<select name="cloak" id="cloakSelect">
+<select name="cloak" data-cloak-select>
   <option value="default">Default Cloak</option>
   <option value="poop">Poop Cloak</option>
   <option value="purple">Purple Cloak</option>
@@ -45,7 +47,7 @@ To configure cloaks on your page:
 </select>
 ```
 
-2. Define your cloaks in a `<script>` tag:
+2. Define your cloaks in a `<script>` tag on your settings page:
 
 ```html
 <script>
@@ -58,13 +60,14 @@ To configure cloaks on your page:
 </script>
 ```
 
-### Using CloakJS APIs
+## Using CloakJS APIs
 
 You can use the following APIs with CloakJS:
 
 - **getTitle()**: Get the current document title.
-  
+
   Example:
+
   ```javascript
   const title = cloak.getTitle();
   console.log(title); // Outputs the current title of the document
@@ -73,6 +76,7 @@ You can use the following APIs with CloakJS:
 - **setTitle(newTitle)**: Set a new document title.
 
   Example:
+
   ```javascript
   cloak.setTitle("New Title");
   ```
@@ -80,6 +84,7 @@ You can use the following APIs with CloakJS:
 - **getFavicon()**: Get the current favicon URL.
 
   Example:
+
   ```javascript
   const favicon = cloak.getFavicon();
   console.log(favicon); // Outputs the current favicon URL
@@ -88,6 +93,7 @@ You can use the following APIs with CloakJS:
 - **setFavicon(url)**: Set a new favicon URL.
 
   Example:
+
   ```javascript
   cloak.setFavicon("new-icon-url.ico");
   ```
@@ -95,6 +101,7 @@ You can use the following APIs with CloakJS:
 - **setCloak(newTitle, url)**: Set both the document title and favicon, and store them in localStorage.
 
   Example:
+
   ```javascript
   cloak.setCloak("New Cloak Title", "new-cloak-icon-url.ico");
   ```

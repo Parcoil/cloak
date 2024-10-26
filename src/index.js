@@ -16,9 +16,8 @@ const cloak = {
     document.title = newTitle;
   },
   setCloak(newTitle, url) {
-    document.title = newTitle;
-    const icons = document.querySelectorAll('link[rel="icon"]');
-    icons.forEach((icon) => (icon.href = url));
+    this.setTitle(newTitle);
+    this.setFavicon(url);
     localStorage.setItem("cloakTitle", newTitle);
     localStorage.setItem("cloakFavicon", url);
   },
@@ -40,9 +39,11 @@ const cloak = {
       cloakFavicon = localStorage.getItem("cloakFavicon");
     }
 
-    // console.log(logo, `Title: ${cloakTitle} Favicon URL: ${cloakFavicon}`);
+    this.setCloak(cloakTitle, cloakFavicon);
   },
 };
+
+window.cloak = cloak;
 
 document.addEventListener("DOMContentLoaded", () => {
   let savedTitle = localStorage.getItem("cloakTitle");
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cloak.setFavicon(savedFavicon);
   cloak.setTitle(savedTitle);
 
-  const cloakSelect = document.getElementById("cloakSelect");
+  const cloakSelect = document.querySelector("[data-cloak-select]");
 
   if (cloakSelect) {
     cloakSelect.addEventListener("change", () => {
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (selectedCloak) {
         cloak.setCloak(selectedCloak.title, selectedCloak.icon);
-        console.log(`Selected cloak title: ${selectedCloak.title}`);
+        console.log(logo, `Set cloak to: ${selectedCloak.title}`);
       } else {
         console.error(
           `Cloak '${selectedCloakName}' not found in cloaks array.`
@@ -72,6 +73,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 cloak.init();
-

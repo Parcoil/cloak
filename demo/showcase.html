@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
+    <title>CloakJS Showcase</title>
+    <script src="../src/index.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-base-200">
+    <div class="container mx-auto px-4 py-8">
+      <main class="card bg-base-100 shadow-xl p-6">
+        <h1 class="text-3xl font-bold mb-6">CloakJS Showcase</h1>
+        <p class="text-lg mb-8">
+          Discover websites using CloakJS for enhanced privacy and
+          customization:
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center"
+        >
+          <!-- Example Site 1 -->
+          <div
+            class="card bg-base-200 shadow-xl transition-all active:scale-[.99] hover:scale-[1.01]"
+          >
+            <figure>
+              <img src="sites/lunaar.png" alt="lunaar image" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Lunaar.org</h2>
+              <p>A Unblocked games site made by Parcoil.</p>
+              <div class="card-actions justify-end mt-4">
+                <a href="https://lunaar.org" class="btn btn-primary"
+                  >Visit Site</a
+                >
+              </div>
+            </div>
+          </div>
+          <p>Add yours by making a pull request!</p>
+        </div>
+
+        <div class="mt-8">
+          <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+      </main>
+      <footer class="block mt-4 p-4 bg-base-300 rounded-lg footer">
+        &copy; 2024 Parcoil Network. All rights reserved.
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

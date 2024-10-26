@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
+    <title>My cool games site</title>
+    <script src="../src/index.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-base-200">
+    <div class="container mx-auto px-4 py-8">
+      <main class="card bg-base-100 shadow-xl p-6">
+        <div class="flex items-center mb-4">
+          <img
+            id="favicon"
+            src=""
+            alt="Favicon"
+            class="w-8 h-8 mr-2"
+            id="cloakImage"
+          />
+          <h1 class="text-2xl font-bold">Default Cloak</h1>
+        </div>
+        <p id="cloakText" class="text-lg mb-4">The cloak is set to:</p>
+        <div class="flex flex-col space-y-4">
+          <a href="other.html" class="btn btn-primary">Go to settings page</a>
+          <a href="showcase.html" class="btn btn-primary">Showcase</a>
+          <p class="text-sm text-base-content/70">
+            Go to the other page to change cloak (simulated settings page)
+          </p>
+        </div>
+      </main>
+      <footer class="block mt-4 p-4 bg-base-300 rounded-lg footer">
+        &copy; 2024 Parcoil Network. All rights reserved.
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
