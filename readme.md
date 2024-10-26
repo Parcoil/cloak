@@ -6,7 +6,7 @@ CloakJS is a lightweight JavaScript library designed for easy tab cloaking.
 
 ![Demo](https://github.com/Parcoil/cloak/blob/main/assets/demo.gif)
 
-View a live demo at [](DEMO)
+View a live demo at [http://cloak.parcoil.com/demo/](http://cloak.parcoil.com/demo/)
 
 ## Get Started
 
