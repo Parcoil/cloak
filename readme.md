@@ -13,7 +13,7 @@ View a live demo at [http://cloak.parcoil.com/demo/](http://cloak.parcoil.com/de
 To start using CloakJS quickly use Jsdelivr:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/Parcoil/cloak@main/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Parcoil/cloak@main/src/index.min.js"></script>
 ```
 
 ### Preparing Your Webpage
