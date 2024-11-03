@@ -14,8 +14,6 @@ function updateCloakInfo() {
   if (cloakText) {
     cloakText.textContent = `The cloak is set to: ${title}`;
   }
-
-  document.querySelector("h1").textContent = title;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

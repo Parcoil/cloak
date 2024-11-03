@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
+    <title>Docs - Cloak.js</title>
+    <meta
+      name="description"
+      content="Cloak js is a simple library that allows you to change the title and favicon of your webpage."
+    />
+    <meta
+      name="keywords"
+      content="Cloak, favicon, title management, web development unblocked, unblockedgames, games, unblocked"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+  </head>
+  <body class="min-h-screen bg-base-200 flex flex-col">
+    <header class="bg-base-300 p-4 shadow">
+      <h1 class="text-5xl font-bold text-center">Cloak Module Documentation</h1>
+      <p class="text-lg text-center text-base-content mt-2">
+        Manage document title and favicon with ease.
+      </p>
+    </header>
+
+    <main
+      class="flex-grow container mx-auto flex flex-col items-start justify-center py-8 px-4"
+    >
+      <section class="mb-8">
+        <h2 class="text-4xl font-bold mb-4">Functions</h2>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">getFavicon()</h3>
+          <p>Retrieves the current favicon URL of the document.</p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+const faviconUrl = cloak.getFavicon();
+console.log(faviconUrl); // Outputs the current favicon URL
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">setFavicon(url)</h3>
+          <p>Sets the favicon of the document to the provided URL.</p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+cloak.setFavicon("https://example.com/new-favicon.ico");
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">getTitle()</h3>
+          <p>Returns the current title of the document.</p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+const title = cloak.getTitle();
+console.log(title); // Outputs the current document title
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">setTitle(title)</h3>
+          <p>Sets the title of the document to the provided string.</p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+cloak.setTitle("New Document Title");
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">setCloak(title, url)</h3>
+          <p>
+            Sets both the title and favicon of the document and saves them in
+            <code>localStorage</code>.
+          </p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+cloak.setCloak("My Awesome Page", "https://example.com/favicon.ico");
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">init()</h3>
+          <p>
+            Initializes the cloak settings by retrieving values from
+            <code>localStorage</code>.
+          </p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+document.addEventListener("DOMContentLoaded", () => {
+    cloak.init(); // Call this to set initial cloak settings
+});
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">aboutBlank(url)</h3>
+          <p>
+            Opens the current tab in an <code>about:blank</code> iframe. If no
+            URL is provided, it defaults to
+            <code
+              >https://www.google.com/search?q=how+many+seconds+in+a+day</code
+            >.
+          </p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+cloak.aboutBlank("https://wikipedia.org");
+</code>
+                </pre>
+        </div>
+
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">reset()</h3>
+          <p>Resets the cloak to the default document title.</p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+cloak.reset();
+</code>
+                </pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="p-4 bg-base-300 text-center mt-8 shadow">
+      <p class="text-base-content">
+        &copy; 2024 Parcoil Network. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

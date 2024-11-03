@@ -1,6 +1,6 @@
 {
   "name": "@parcoil/cloak",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Tab Cloaking lib",
   "main": "src/index.js",
   "repository": {

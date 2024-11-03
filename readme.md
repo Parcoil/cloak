@@ -106,4 +106,21 @@ You can use the following APIs with CloakJS:
   cloak.setCloak("New Cloak Title", "new-cloak-icon-url.ico");
   ```
 
+- **reset()**: Resets the cloak to the default document title.
+
+  Example:
+
+  ```javascript
+  cloak.reset();
+  ```
+
+- **aboutBlank(url)**: Opens the current tab in a about:blank iframe
+
+  Example:
+
+  ```javascript
+  cloak.aboutBlank("https://wikipedia.org");
+  // defaults to https://www.google.com/search?q=how+many+seconds+in+a+day if no url provided
+  ```
+
 If you encounter any issues, feel free to create an issue on GitHub.

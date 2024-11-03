@@ -3,63 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cloak Settings</title>
     <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
-    <link rel="stylesheet" href="./main.css" />
-    <script src="../src/index.js"></script>
+    <title>Settings - Cloak.js</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../src/index.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
   </head>
-  <body class="min-h-screen bg-base-200">
-    <div class="container mx-auto px-4 py-8">
-      <main class="card bg-base-100 shadow-xl p-6">
-        <h1 class="text-2xl font-bold mb-4">Cloak Settings</h1>
-        <a href="index.html" class="btn btn-primary mb-4">Go home</a>
-        <div class="form-control">
-          <label for="cloakSelect" class="label">
-            <span class="label-text">Select a Cloak:</span>
-          </label>
-          <select
-            name="cloak"
-            data-cloak-select
-            class="select select-bordered w-full max-w-xs"
-          >
-            <option value="default">Default Cloak</option>
-            <option value="poop">Poop Cloak</option>
-            <option value="purple">Purple Cloak</option>
-            <option value="sparkles">Sparkle Cloak</option>
-          </select>
-        </div>
-      </main>
-      <footer class="block mt-4 p-4 bg-base-300 rounded-lg footer">
+  <body class="min-h-screen bg-base-200 flex flex-col">
+    <header class="bg-base-100 shadow-md p-6">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">Cloak Settings</h1>
+        <a href="index.html" class="btn btn-primary">Go Home</a>
+      </div>
+    </header>
+
+    <main
+      class="flex-grow container mx-auto flex flex-col items-center justify-center py-16"
+    >
+      <a
+        href="https://github.com/parcoil/cloak"
+        class="absolute top-4 right-4 text-3xl btn btn-ghost btn-circle"
+        ><i class="devicon-github-original"></i
+      ></a>
+      <h2 class="text-3xl font-bold mb-6">Select a Cloak:</h2>
+      <div class="form-control w-full max-w-xs mb-6">
+        <label for="cloakSelect" class="label">
+          <span class="label-text">Cloak Options</span>
+        </label>
+        <select
+          name="cloak"
+          id="cloakSelect"
+          data-cloak-select
+          class="select select-bordered w-full"
+        >
+          <option value="default">Default Cloak</option>
+          <option value="poop">Poop Cloak</option>
+          <option value="purple">Purple Cloak</option>
+          <option value="sparkles">Sparkle Cloak</option>
+        </select>
+      </div>
+      <label for="aboutBlank" class="label">
+        <span class="label-text">About Blank Cloak</span>
+      </label>
+      <button
+        id="aboutBlank"
+        class="btn btn-primary"
+        onclick="cloak.aboutBlank()"
+      >
+        Launch about:blank cloak
+      </button>
+      <p class="text-sm text-base-content/60 text-center mt-4">
+        Adjust your cloak settings above.
+      </p>
+      <div>
+        <button class="btn btn-error" onclick="cloak.reset()">
+          Reset Cloak
+        </button>
+      </div>
+    </main>
+
+    <footer class="p-4 bg-base-300 text-center">
+      <p class="text-base-content">
         &copy; 2024 Parcoil Network. All rights reserved.
-      </footer>
-    </div>
+      </p>
+    </footer>
+
+    <script>
+      const cloaks = [
+        {
+          name: "default",
+          icon: "./cloaks/favicon.ico",
+          title: "Cloak JS - Parcoil",
+        },
+        { name: "poop", icon: "./cloaks/poop.ico", title: "Poop Cloak" },
+        { name: "purple", icon: "./cloaks/purple.ico", title: "Purple Cloak" },
+        {
+          name: "sparkles",
+          icon: "./cloaks/sparkles.ico",
+          title: "Sparkle Cloak",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cloakSelect = document.getElementById("cloakSelect");
+        const currentTitle = localStorage.getItem("cloakTitle");
+        const currentCloak = cloaks.find(
+          (cloak) => cloak.title === currentTitle
+        );
+
+        if (currentCloak) {
+          cloakSelect.value = currentCloak.name;
+        }
+      });
+    </script>
   </body>
-  <script>
-    const cloaks = [
-      { name: "default", icon: "./cloaks/default.ico", title: "Default Cloak" },
-      { name: "poop", icon: "./cloaks/poop.ico", title: "Poop Cloak" },
-      { name: "purple", icon: "./cloaks/purple.ico", title: "Purple Cloak" },
-      {
-        name: "sparkles",
-        icon: "./cloaks/sparkles.ico",
-        title: "Sparkle Cloak",
-      },
-    ];
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const cloakSelect = document.getElementById("cloakSelect");
-      const currentTitle = localStorage.getItem("cloakTitle");
-      const currentCloak = cloaks.find((cloak) => cloak.title === currentTitle);
-
-      if (currentCloak) {
-        cloakSelect.value = currentCloak.name;
-      }
-    });
-  </script>
 </html>

@@ -4,41 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
-    <title>My cool games site</title>
-    <script src="../src/index.js"></script>
+    <title>Home - Cloak.js</title>
+    <meta
+      name="description"
+      content="Cloak js is a simple library that allows you to change the title and favicon of your webpage."
+    />
+    <meta
+      name="keywords"
+      content="Cloak, favicon, title management, web development unblocked, unblockedgames, games, unblocked"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
       rel="stylesheet"
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../src/index.js" type=""></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
   </head>
-  <body class="min-h-screen bg-base-200">
-    <div class="container mx-auto px-4 py-8">
-      <main class="card bg-base-100 shadow-xl p-6">
-        <div class="flex items-center mb-4">
-          <img
-            id="favicon"
-            src=""
-            alt="Favicon"
-            class="w-8 h-8 mr-2"
-            id="cloakImage"
-          />
-          <h1 class="text-2xl font-bold">Default Cloak</h1>
-        </div>
-        <p id="cloakText" class="text-lg mb-4">The cloak is set to:</p>
-        <div class="flex flex-col space-y-4">
-          <a href="other.html" class="btn btn-primary">Go to settings page</a>
-          <a href="showcase.html" class="btn btn-primary">Showcase</a>
-          <p class="text-sm text-base-content/70">
-            Go to the other page to change cloak (simulated settings page)
-          </p>
-        </div>
-      </main>
-      <footer class="block mt-4 p-4 bg-base-300 rounded-lg footer">
+  <body class="min-h-screen bg-base-200 flex flex-col">
+    <main
+      class="flex-grow container mx-auto flex flex-col items-center justify-center py-16"
+    >
+      <a
+        href="https://github.com/parcoil/cloak"
+        class="absolute top-4 right-4 text-3xl btn btn-ghost btn-circle"
+        ><i class="devicon-github-original"></i
+      ></a>
+      <img
+        src=""
+        id="favicon"
+        alt=""
+        width="48"
+        height="48"
+        class="w-[48px] height-[48px]"
+      />
+      <h2 id="cloakText" class="text-3xl font-bold mb-6">
+        The cloak is set to:
+      </h2>
+      <div class="flex flex-col space-y-4 w-full max-w-md">
+        <a href="docs.html" class="btn btn-outline w-full">View Docs</a>
+        <a href="other.html" class="btn btn-primary w-full"
+          >Go to Settings Page</a
+        >
+        <a href="showcase.html" class="btn btn-secondary w-full"
+          >View Showcase</a
+        >
+        <p class="text-sm text-base-content/60 text-center">
+          Go to the other page to change cloak (simulated settings page).
+        </p>
+      </div>
+    </main>
+
+    <footer class="p-4 bg-base-300 text-center">
+      <p class="text-base-content">
         &copy; 2024 Parcoil Network. All rights reserved.
-      </footer>
-    </div>
+      </p>
+    </footer>
+
     <script src="main.js"></script>
   </body>
 </html>

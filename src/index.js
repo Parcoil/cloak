@@ -41,6 +41,24 @@ const cloak = {
 
     this.setCloak(cloakTitle, cloakFavicon);
   },
+  aboutBlank(url) {
+    if (!url) url = "https://www.google.com/search?q=how+many+seconds+in+a+day";
+    const newWindow = window.open();
+    const iframe = newWindow.document.createElement("iframe");
+    newWindow.document.body.style.margin = "0";
+    newWindow.document.body.style.height = "100vh";
+    iframe.src = window.location.href;
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    newWindow.document.body.appendChild(iframe);
+    window.location.replace(url);
+  },
+  reset() {
+    localStorage.removeItem("cloakTitle");
+    localStorage.removeItem("cloakFavicon");
+    window.location.reload();
+  },
 };
 
 window.cloak = cloak;
