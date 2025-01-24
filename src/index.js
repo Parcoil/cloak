@@ -8,68 +8,41 @@ const cloak = {
   setFavicon(url) {
     const icons = document.querySelectorAll('link[rel="icon"]');
     icons.forEach((icon) => (icon.href = url));
+    localStorage.setItem("cloakFavicon", url);
   },
   getTitle() {
     return document.title;
   },
   setTitle(newTitle) {
     document.title = newTitle;
+    localStorage.setItem("cloakTitle", newTitle);
   },
   setCloak(newTitle, url) {
     this.setTitle(newTitle);
     this.setFavicon(url);
-    localStorage.setItem("cloakTitle", newTitle);
-    localStorage.setItem("cloakFavicon", url);
   },
   init() {
-    let cloakTitle = localStorage.getItem("cloakTitle");
-    let cloakFavicon = localStorage.getItem("cloakFavicon");
-
-    if (!cloakTitle || !cloakFavicon) {
-      console.log(logo, "Initializing cloak settings...");
-      const newTitle = this.getTitle();
-      const newFavicon = this.getFavicon();
-      if (!cloakTitle) {
-        localStorage.setItem("cloakTitle", newTitle);
-      }
-      if (!cloakFavicon && newFavicon) {
-        localStorage.setItem("cloakFavicon", newFavicon);
-      }
-      cloakTitle = localStorage.getItem("cloakTitle");
-      cloakFavicon = localStorage.getItem("cloakFavicon");
-    }
-
-    this.setCloak(cloakTitle, cloakFavicon);
+    console.warn(
+      logo,
+      "cloak.init() has been deprecated. theres no need to call it anymore."
+    );
   },
-  aboutBlank(url) {
-    if (!url) url = "https://www.google.com/search?q=how+many+seconds+in+a+day";
-    const newWindow = window.open();
-    const iframe = newWindow.document.createElement("iframe");
-    newWindow.document.body.style.margin = "0";
-    newWindow.document.body.style.height = "100vh";
-    iframe.src = window.location.href;
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.border = "none";
-    newWindow.document.body.appendChild(iframe);
-    window.location.replace(url);
-  },
-  reset() {
+  reset(reload = true) {
     localStorage.removeItem("cloakTitle");
     localStorage.removeItem("cloakFavicon");
-    window.location.reload();
+    console.log(
+      logo,
+      "Cloak reset. Title and favicon will remain unset until needed."
+    );
+    if (reload === true) {
+      window.location.reload();
+    }
   },
 };
 
 window.cloak = cloak;
 
 document.addEventListener("DOMContentLoaded", () => {
-  let savedTitle = localStorage.getItem("cloakTitle");
-  let savedFavicon = localStorage.getItem("cloakFavicon");
-
-  cloak.setFavicon(savedFavicon);
-  cloak.setTitle(savedTitle);
-
   const cloakSelect = document.querySelector("[data-cloak-select]");
 
   if (cloakSelect) {
@@ -89,6 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
 
-cloak.init();
+  const savedTitle = localStorage.getItem("cloakTitle");
+  const savedFavicon = localStorage.getItem("cloakFavicon");
+  if (savedTitle && savedFavicon) {
+    cloak.setTitle(savedTitle);
+    cloak.setFavicon(savedFavicon);
+  }
+});

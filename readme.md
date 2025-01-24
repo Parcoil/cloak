@@ -1,6 +1,6 @@
-# CloakJS: Simplifying Tab Cloaking with JavaScript
+# Cloak.js: Simplifying Tab Cloaking with JavaScript
 
-CloakJS is a lightweight JavaScript library designed for easy tab cloaking.
+Cloak.js is a lightweight JavaScript library designed for easy tab cloaking.
 
 ## Demo
 
@@ -10,7 +10,7 @@ View a live demo at [http://cloak.parcoil.com/demo/](http://cloak.parcoil.com/de
 
 ## Get Started
 
-To start using CloakJS quickly use Jsdelivr:
+To start using Cloak.js quickly use Jsdelivr:
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/Parcoil/cloak@main/src/index.min.js"></script>
@@ -18,7 +18,7 @@ To start using CloakJS quickly use Jsdelivr:
 
 ### Preparing Your Webpage
 
-Before using CloakJS, ensure your webpage is properly configured:
+Before using Cloak.js, ensure your webpage is properly configured:
 
 Ensure you have a favicon set:
 
@@ -60,9 +60,9 @@ To configure cloaks on your page:
 </script>
 ```
 
-## Using CloakJS APIs
+## Using Cloak.js APIs
 
-You can use the following APIs with CloakJS:
+You can use the following APIs with Cloak.js:
 
 - **getTitle()**: Get the current document title.
 

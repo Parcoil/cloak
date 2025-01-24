@@ -99,22 +99,6 @@ cloak.setCloak("My Awesome Page", "https://example.com/favicon.ico");
         </div>
 
         <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
-          <h3 class="text-2xl font-semibold">init()</h3>
-          <p>
-            Initializes the cloak settings by retrieving values from
-            <code>localStorage</code>.
-          </p>
-          <h4 class="text-xl font-semibold">Example:</h4>
-          <pre class="bg-base-300 p-4 rounded-lg">
-<code>
-document.addEventListener("DOMContentLoaded", () => {
-    cloak.init(); // Call this to set initial cloak settings
-});
-</code>
-                </pre>
-        </div>
-
-        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
           <h3 class="text-2xl font-semibold">aboutBlank(url)</h3>
           <p>
             Opens the current tab in an <code>about:blank</code> iframe. If no
@@ -137,7 +121,11 @@ cloak.aboutBlank("https://wikipedia.org");
           <h4 class="text-xl font-semibold">Example:</h4>
           <pre class="bg-base-300 p-4 rounded-lg">
 <code>
+// Refreshes the page by default  
 cloak.reset();
+
+// You can also provide a boolean to prevent refreshing
+cloak.reset(false);
 </code>
                 </pre>
         </div>
@@ -146,7 +134,7 @@ cloak.reset();
 
     <footer class="p-4 bg-base-300 text-center mt-8 shadow">
       <p class="text-base-content">
-        &copy; 2024 Parcoil Network. All rights reserved.
+        &copy; 2024-2025 Parcoil Network. All rights reserved.
       </p>
     </footer>
   </body>
