@@ -111,7 +111,11 @@ You can use the following APIs with Cloak.js:
   Example:
 
   ```javascript
-  cloak.reset();
+   // Refreshes the page by default  
+   cloak.reset();
+
+   // You can also provide a boolean to prevent refreshing
+  cloak.reset(false);
   ```
 
 - **aboutBlank(url)**: Opens the current tab in a about:blank iframe
