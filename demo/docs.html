@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="cloaks/favicon.ico" />
     <title>Docs - Cloak.js</title>
+    <script src="../src/index.js" type=""></script>
     <meta
       name="description"
       content="Cloak js is a simple library that allows you to change the title and favicon of your webpage."
@@ -128,6 +129,26 @@ cloak.reset();
 cloak.reset(false);
 </code>
                 </pre>
+        </div>
+        <div class="bg-base-100 p-4 rounded-lg shadow-md mb-4">
+          <h3 class="text-2xl font-semibold">getCloak()</h3>
+          <p>
+            Retrieves the active cloak from <code>localStorage</code> and
+            returns the title and icon in an array format.
+          </p>
+          <h4 class="text-xl font-semibold">Example:</h4>
+          <pre class="bg-base-300 p-4 rounded-lg">
+<code>
+const [title, icon] = getCloak(); // Returns [title, icon]
+
+console.log(title); // Access the title
+console.log(icon);  // Access the icon
+</code>
+                </pre>
+          <p class="text-sm text-gray-500 mt-2">
+            Note: The <code>getCloak()</code> function will return an array with
+            the title and icon. Ensure you handle both values correctly.
+          </p>
         </div>
       </section>
     </main>

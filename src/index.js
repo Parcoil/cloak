@@ -2,30 +2,58 @@ const logo = "\x1b[91m[Parcoil Cloak]\x1b[0m";
 
 const cloak = {
   getFavicon() {
-    const icons = document.querySelectorAll('link[rel="icon"]');
-    return icons.length > 0 ? icons[0].href : null;
+    try {
+      const icons = document.querySelectorAll('link[rel="icon"]');
+      return icons.length > 0 ? icons[0].href : null;
+    } catch (err) {
+      console.error(logo, err);
+    }
   },
   setFavicon(url) {
-    const icons = document.querySelectorAll('link[rel="icon"]');
-    icons.forEach((icon) => (icon.href = url));
-    localStorage.setItem("cloakFavicon", url);
+    try {
+      const icons = document.querySelectorAll('link[rel="icon"]');
+      if (icons.length === 0) {
+        throw new Error("Favicon not found. Try adding rel='icon'");
+      }
+      icons.forEach((icon) => (icon.href = url));
+      localStorage.setItem("cloakFavicon", url);
+    } catch (err) {
+      console.error(logo, err);
+    }
   },
   getTitle() {
-    return document.title;
+    try {
+      return document.title;
+    } catch (err) {
+      console.error(logo, err);
+    }
   },
   setTitle(newTitle) {
-    document.title = newTitle;
-    localStorage.setItem("cloakTitle", newTitle);
+    try {
+      document.title = newTitle;
+      localStorage.setItem("cloakTitle", newTitle);
+    } catch (err) {
+      console.error(logo, err);
+    }
   },
   setCloak(newTitle, url) {
-    this.setTitle(newTitle);
-    this.setFavicon(url);
+    try {
+      this.setTitle(newTitle);
+      this.setFavicon(url);
+    } catch (err) {
+      console.error(logo, err);
+    }
   },
   init() {
     console.warn(
       logo,
       "cloak.init() has been deprecated. theres no need to call it anymore."
     );
+  },
+  getCloak() {
+    const title = localStorage.getItem("cloakTitle");
+    const icon = localStorage.getItem("cloakFavicon");
+    return [title, icon];
   },
   aboutBlank(url) {
     if (!url) url = "https://www.google.com/search?q=how+many+seconds+in+a+day";
