@@ -55,13 +55,13 @@ const cloak = {
     const icon = localStorage.getItem("cloakFavicon");
     return [title, icon];
   },
-  aboutBlank(url) {
+  aboutBlank(url, newURl) {
     if (!url) url = "https://www.google.com/search?q=how+many+seconds+in+a+day";
     const newWindow = window.open();
     const iframe = newWindow.document.createElement("iframe");
     newWindow.document.body.style.margin = "0";
     newWindow.document.body.style.height = "100vh";
-    iframe.src = window.location.href;
+    iframe.src = newURl || window.location.href;
     iframe.style.width = "100%";
     iframe.style.height = "100%";
     iframe.style.border = "none";
